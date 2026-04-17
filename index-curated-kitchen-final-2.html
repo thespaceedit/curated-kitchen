@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>The Curated Kitchen — Amazon.co.uk Editorial Catalogue</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&amp;family=Jost:wght@300;400;500&amp;display=swap" rel="stylesheet"/>
+<style>
+:root {
+  --cream: #F7F1EA;
+  --cream-dark: #EDE4D8;
+  --sage: #7B9E7B;
+  --sage-light: #C5DBBB;
+  --charcoal: #1E1E1E;
+  --warm-white: #FDFAF7;
+  --gold: #B8956A;
+  --mid: #888880;
+  --border: #E2D9CE;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:'Jost',sans-serif;font-weight:300;background:var(--warm-white);color:var(--charcoal);line-height:1.7;font-size:15px;}
+
+/* ── HEADER ── */
+.site-header{background:var(--charcoal);color:var(--cream);text-align:center;padding:96px 24px 72px;position:relative;overflow:hidden;}
+.site-header::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 60% 40%, #2E3E2E 0%, #1E1E1E 70%);opacity:0.9;}
+.site-header>*{position:relative;z-index:1;}
+.eyebrow{font-family:'Jost',sans-serif;font-weight:300;font-size:10px;letter-spacing:0.45em;text-transform:uppercase;color:var(--sage);margin-bottom:24px;}
+.site-name{font-family:'Cormorant Garamond',serif;font-size:clamp(52px,9vw,96px);font-weight:300;letter-spacing:-0.02em;line-height:0.95;margin-bottom:28px;}
+.site-tagline{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(18px,2.5vw,26px);color:#A8998C;margin-bottom:40px;}
+.site-intro{max-width:540px;margin:0 auto;font-size:13.5px;color:#7A706A;line-height:1.85;font-weight:300;}
+.site-intro em{color:#9A8E86;font-style:normal;}
+.divider-line{width:48px;height:1px;background:var(--sage);margin:32px auto 0;opacity:0.6;}
+
+/* ── NAV ── */
+.cat-nav{position:sticky;top:0;z-index:200;background:var(--charcoal);border-bottom:1px solid #2A2A2A;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;}
+.cat-nav::-webkit-scrollbar{display:none;}
+.cat-nav-inner{display:flex;width:max-content;padding:0 20px;}
+.cat-nav a{font-family:'Jost',sans-serif;font-size:10px;font-weight:400;letter-spacing:0.18em;text-transform:uppercase;color:#666;padding:15px 18px;text-decoration:none;white-space:nowrap;transition:color 0.2s;border-bottom:2px solid transparent;}
+.cat-nav a:hover{color:var(--cream);border-bottom-color:var(--sage);}
+
+/* ── SECTION ── */
+.cat-section{padding:80px 0;border-bottom:1px solid var(--border);}
+.cat-section:nth-child(even){background:var(--cream);}
+.inner{max-width:1080px;margin:0 auto;padding:0 28px;}
+.section-number{font-family:'Jost',sans-serif;font-size:10px;letter-spacing:0.4em;text-transform:uppercase;color:var(--sage);margin-bottom:10px;}
+.section-title{font-family:'Cormorant Garamond',serif;font-size:clamp(34px,5.5vw,58px);font-weight:300;line-height:1.05;margin-bottom:16px;}
+.section-intro{font-size:14px;color:#666;max-width:580px;margin-bottom:52px;line-height:1.85;}
+
+/* ── HERO CARD ── */
+.hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;margin-bottom:64px;}
+@media(max-width:680px){.hero-grid{grid-template-columns:1fr;gap:32px;}}
+.hero-visual{border-radius:2px;overflow:hidden;position:relative;aspect-ratio:4/3;}
+.hero-visual-bg{width:100%;height:100%;display:flex;align-items:center;justify-content:center;}
+.hero-stamp{position:absolute;top:16px;left:16px;background:rgba(30,30,30,0.85);color:var(--cream);font-family:'Jost',sans-serif;font-size:9px;letter-spacing:0.25em;text-transform:uppercase;padding:6px 14px;backdrop-filter:blur(4px);}
+.hero-icon{font-size:64px;opacity:0.25;}
+.hero-badge{display:inline-block;font-family:'Jost',sans-serif;font-size:9px;letter-spacing:0.3em;text-transform:uppercase;color:var(--gold);border:1px solid var(--gold);padding:5px 14px;margin-bottom:22px;}
+.hero-badge.search{color:var(--sage);border-color:var(--sage);}
+.hero-name{font-family:'Cormorant Garamond',serif;font-size:clamp(22px,2.8vw,34px);font-weight:400;line-height:1.2;margin-bottom:18px;}
+.hero-specs{display:flex;flex-direction:column;gap:6px;margin-bottom:20px;}
+.spec{font-size:12px;color:var(--mid);display:flex;align-items:baseline;gap:8px;}
+.spec::before{content:'—';color:var(--sage);flex-shrink:0;}
+.hero-desc{font-size:13.5px;color:#4A4A4A;line-height:1.85;margin-bottom:24px;}
+.hero-love{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:18px;color:var(--charcoal);border-left:2px solid var(--sage);padding-left:18px;margin-bottom:30px;line-height:1.5;}
+.btn{display:inline-block;font-family:'Jost',sans-serif;font-size:10.5px;font-weight:500;letter-spacing:0.22em;text-transform:uppercase;padding:14px 30px;text-decoration:none;transition:all 0.2s;}
+.btn-dark{background:var(--charcoal);color:var(--cream);}
+.btn-dark:hover{background:var(--sage);}
+.btn-outline{background:transparent;border:1.5px solid var(--charcoal);color:var(--charcoal);}
+.btn-outline:hover{background:var(--charcoal);color:var(--cream);}
+
+/* ── ACCESSORIES ── */
+.acc-header{font-family:'Jost',sans-serif;font-size:9.5px;letter-spacing:0.38em;text-transform:uppercase;color:#AAA;margin-bottom:24px;padding-bottom:14px;border-bottom:1px solid var(--border);}
+.acc-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:20px;}
+.acc-card{background:var(--warm-white);border:1px solid var(--border);padding:22px;transition:transform 0.2s,box-shadow 0.2s;}
+.acc-card:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(0,0,0,0.06);}
+.cat-section:nth-child(even) .acc-card{background:#FBF8F4;}
+.acc-swatch{height:80px;border-radius:1px;margin-bottom:16px;}
+.acc-name{font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:400;margin-bottom:8px;line-height:1.3;}
+.acc-desc{font-size:12px;color:#888;line-height:1.7;margin-bottom:14px;}
+.acc-link{font-family:'Jost',sans-serif;font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:var(--charcoal);text-decoration:none;display:inline-flex;align-items:center;gap:6px;}
+.acc-link::after{content:'→';transition:transform 0.2s;}
+.acc-link:hover{color:var(--sage);}
+.acc-link:hover::after{transform:translateX(3px);}
+
+/* Under-sink special callout */
+.undersink-callout{background:var(--charcoal);color:var(--cream);padding:40px;margin-bottom:52px;position:relative;overflow:hidden;}
+.undersink-callout::before{content:'"';font-family:'Cormorant Garamond',serif;font-size:240px;font-weight:300;color:#333;position:absolute;top:-60px;left:-20px;line-height:1;pointer-events:none;}
+.undersink-callout p{position:relative;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(18px,2.5vw,24px);line-height:1.6;max-width:620px;color:#C8BDB4;}
+
+/* Footer */
+footer{background:var(--charcoal);color:#555;text-align:center;padding:56px 24px;font-size:12px;line-height:1.9;}
+footer strong{color:#888;}
+footer a{color:var(--sage);text-decoration:none;}
+.footer-name{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:300;color:#666;margin-bottom:16px;}
+.disclaimer{max-width:560px;margin:24px auto 0;font-size:11px;color:#444;line-height:1.8;}
+</style>
+</head>
+<body>
+<!-- ══════════════ HEADER ══════════════ -->
+<header class="site-header">
+<p class="eyebrow">Amazon.co.uk · Expert Curation · 12 Kitchen Worlds</p>
+<h1 class="site-name">The Curated<br/>Kitchen</h1>
+<p class="site-tagline">Someone already did the Amazon search for you.</p>
+<p class="site-intro">A kitchen doesn't need more things. It needs the <em>right</em> things. Every piece in this catalogue is chosen for how it looks, how it works, and how naturally it belongs with everything else. All available on Amazon.co.uk today.</p>
+<div class="divider-line"></div>
+</header>
+<!-- ══════════════ NAV ══════════════ -->
+<nav class="cat-nav">
+<div class="cat-nav-inner">
+<a href="#coffee">Coffee Station</a>
+<a href="#cookware">Cookware</a>
+<a href="#knives">Knives</a>
+<a href="#bakeware">Bakeware</a>
+<a href="#storage">Storage</a>
+<a href="#serving">Serving</a>
+<a href="#boards">Boards</a>
+<a href="#mixer">Mixer</a>
+<a href="#airfryer">Air Fryer</a>
+<a href="#textiles">Textiles</a>
+<a href="#sink">Sink Edit</a>
+<a href="#undersink">Under-Sink</a>
+</div>
+</nav>
+<!-- ══════════════ 01 · COFFEE STATION ══════════════ -->
+<section class="cat-section" id="coffee">
+<div class="inner">
+<p class="section-number">01 / 12</p>
+<h2 class="section-title">Kettle &amp; Coffee Station</h2>
+<p class="section-intro">The morning ritual deserves a centrepiece. Everything here sits on the counter. Everything here earns its place.</p>
+<div class="hero-grid">
+<div class="hero-visual">
+<div class="hero-visual-bg" style="background:linear-gradient(145deg,#6B9E6B,#3A5E3A);">
+<span class="hero-icon">☕</span>
+</div>
+<div class="hero-stamp">Hero Product</div>
+</div>
+<div class="hero-content">
+<div class="hero-badge">Direct Amazon.co.uk Link</div>
+<h3 class="hero-name">ASCOT Retro Glass Electric Kettle — Sage Green</h3>
+<div class="hero-specs">
+<div class="spec">Borosilicate glass · No plastic touches the water</div>
+<div class="spec">1.5L · 1500W · Boils in under 5 minutes</div>
+<div class="spec">2-year replacement warranty</div>
+<div class="spec">Cordless 360° base · Auto shut-off</div>
+</div>
+<p class="hero-desc">Glass body that shows the boil. The sage green enamel is muted and matt — the colour of a considered kitchen, not a kitschy one. A removable stainless filter, lift-off lid, and cool-touch handle. The kind of kettle people ask about when they visit. No plastic touches the water at any point, including the inner lid.</p>
+<div class="hero-love">"Makes the morning feel like it was designed for her — because it was."</div>
+<a class="btn btn-dark" href="https://www.amazon.co.uk/dp/B0CDC3XNW2?tag=sinkedit-21" rel="nofollow sponsored noopener" target="_blank">View on Amazon.co.uk →</a>
+</div>
+</div>
+<p class="acc-header">Complete the Coffee Station</p>
+<div class="acc-grid">
+<div class="acc-card">
+<div class="acc-swatch" style="background:linear-gradient(135deg,#C8AA80,#8A6840);"></div>
+<h4 class="acc-name">Hario V60 Pour-Over Dripper</h4>
+<p class="acc-desc">The dripper that made slow coffee mainstream. Clear glass or ceramic. The ritual of pouring — beautiful on the counter, better in the cup.</p>
+<a class="acc-link" href="https://www.amazon.co.uk/dp/B01L6OCXAS?tag=sinkedit-21" rel="nofollow sponsored noopener" target="_blank">View on Amazon →</a>
+</div>
+<div class="acc-card">
+<div class="acc-swatch" style="background:linear-gradient(135deg,#8FAF88,#5C7A5C);"></div>
+<h4 class="acc-name">LENAK Stackable Sage Canister Set</h4>
+<p class="acc-desc">Airtight bamboo lid. Embossed lettering. Sits beside the kettle and completes the station without trying to be noticed.</p>
+<a class="acc-link" href="https://www.amazon.co.uk/dp/B0FPCJ9CNW?tag=sinkedit-21" rel="nofollow sponsored noopener" target="_blank">View on Amazon</a>
+</div>
+<div class="acc-card">
+<div class="acc-swatch" style="background:linear-gradient(135deg,#3A3A3A,#1A1A1A);"></div>
+<h4 class="acc-name">Matte Black Ribbed Mug Set</h4>
+<p class="acc-desc">4-piece ceramic mug set with a clean ribbed profile. Satisfying weight in the hand. The mugs people ask about when they visit.</p>
+<a class="acc-link" href="https://www.amazon.co.uk/dp/B0D9YYL44T?tag=sinkedit-21" rel="nofollow sponsored noopener" target="_blank">View on Amazon →</a>
+</div>
+<div class="acc-card">
+<div class="acc-swatch" style="background:linear-gradient(135deg,#C4A882,#8C6E4A);"></div>
+<h4 class="acc-name">Ibyx Bamboo Appliance Sliding Tray</h4>
+<p class="acc-desc">A bamboo slider tray that lets a coffee machine or kettle station move forward smoothly, then sit neatly back against the wall.</p>
+<a class="acc-link" href="https://www.amazon.co.uk/dp/B0BBD974PK?tag=sinkedit-21" rel="nofollow sponsored noopener" target="_blank">View on Amazon →</a>
+</div>
+</div>
+</div>
+</section>
+<!-- ══════════════ 02 · COOKWARE ══════════════ -->
+<section class="cat-section" id="cookware">
+<div class="inner">
+<p class="section-number">02 / 12</p>
+<h2 class="section-title">Cookware Set</h2>
+<p class="section-intro">Pans visible on the hob or hanging on the rack. Chosen to look as intentional as they cook.</p>
+<div class="hero-grid">
+<div class="hero-visual">
+<div class="hero-visual-bg" style="background:linear-gradient(145deg,#7B9E7B,#3E5E3E);">
+<span class="hero-icon">🍳</span>
+</div>
+<div class="hero-stamp">Hero Product</div>
+</div>
+<div class="hero-content">
+<div class="hero-badge">Direct Amazon.co.uk Link</div>
+<h3 class="hero-name">Cuisinart GreenChef 13-Piece Ceramic Cookware — Sage Green</h3>
+<div class="hero-specs">
+<div class="spec">Granite-style non-stick coating · Aluminium body</div>
+<div class="spec">PFOS and PFOA free coating</div>
+<div class="spec">12 pieces · Induction compatible</div>
+<div class="spec">Glass lids · Soft green finish</div>
+</div>
+<p class="hero-desc">A coordinated green cookware set with induction-ready pans, glass lids and the kind of soft colour that looks intentional on the hob. It gives the kitchen a full matching moment without designer-shop pricing.</p>
+<div class="hero-love">"The pans that make cooking feel like a choice, not a chore."</div>
+<a class="btn btn-dark" href="https://www.amazon.co.uk/dp/B09WB482BT?tag=sinkedit-21" rel="nofollow sponsored noopener" target="_blank">View on Amazon.co.uk →</a>
+</div>
+</div>
+<p class="acc-header">Complete the Cookware Setup</p>
+<div class="acc-grid">
+<div class="acc-card">
+<div class="acc-swatch" style="background:linear-gradient(135deg,#7B9E7B,#4A6A4A);"></div>
+<h4 class="acc-name">Silicone Utensil Set</h4>
+<p class="acc-desc">Sage or cream colourway, heat-resistant to 230°C. These stay on the counter as part of the aesthetic, not hidden in a drawer.</p>
+<a class="acc-link" href="https://www.amazon.co.uk/dp/B083ZS83VX?tag=sinkedit-21" rel="nofollow sponsored noopener" target="_blank">View on Amazon →</a>
+</div>
+<div class="acc-card">
+<div class="acc-swatch" style="background:linear-gradient(135deg,#C8C8C8,#888);"></div>
+<h4 class="acc-name">Stainless Steel Splatter Screen</h4>
+<p class="acc-desc">Fine mesh with an ergonomic handle. The thing that keeps the hob clean and the kitchen smelling right. Often overlooked. Always needed.</p>
+<a class="acc-link" href="https://www.amazon.co.uk/dp/B000HCBDF2?tag=sinkedit-21" rel="nofollow sponsored noopener" target="_blank">View on Amazon →</a>
+</div>
+<div class="acc-card">
+<div class="acc-swatch" style="background:linear-gradient(135deg,#1A1A1A,#333);"></div>
+<h4 class="acc-name">Yamazaki Tower Pot Lid &amp; Ladle Stand</h4>
+<p class="acc-desc">Minimal white steel that holds a pot lid or ladle while cooking. It looks calm on the counter and solves the awkward where-do-I-put-this problem.</p>
+<a class="acc-link" href="https://www.amazon.co.uk/dp/B00T71CIDK?tag=sinkedit-21" rel="nofollow sponsored noopener" target="_blank">View on Amazon →</a>
+</div>
+</div>
+</div>
+</section>
+<!-- ══════════════ 03 · KNIVES ══════════════ -->
+<section class="cat-section" id="knives">
+<div class="inner">
+<p class="section-number">03 / 12</p>
+<h2 class="section-title">Knife Collection</h2>
+<p class="section-intro">The thing that sits on the counter and tells visitors everything about the kitchen before a word is spoken.</p>
+<div class="hero-grid">
+<div class="hero-visual">
+<div class="hero-visual-bg" style="background:linear-gradient(145deg,#3A3A3A,#1A1A1A);">
+<span class="hero-icon">🔪</span>
+</div>
+<div class="hero-stamp">Hero Product</div>
+</div>
+<div class="hero-content">
+<div class="hero-badge">Direct Amazon.co.uk Link</div>
+<h3 class="hero-name">ZWILLING Gourmet Self-Sharpening Knife Block Set</h3>
+<div class="hero-specs">
+<div class="spec">Ice-hardened stainless steel · German precision</div>
+<div class="spec">Full bolster · Ergonomic triple-rivet handle</div>
+<div class="spec">Lifetime guarantee</div>
+<div class="spec">Natural wood block — counter-ready</div>
+</div>
+<p class="hero-desc">ZWILLING's Gourmet self-sharpening block is the knife set that professional kitchens and serious home cooks both reach for. The integrated sharpening slots refresh the smooth blades every time they are removed or replaced. The wood block sits on the counter as a piece in its own right. A lifetime guarantee from a brand that has been making knives since 1731.</p>
+<div class="hero-love">"The knife set she photographs. The block she leaves out because it belongs there."</div>
+<a class="btn btn-outline" href="https://www.amazon.co.uk/dp/B07C1SBHTF?tag=sinkedit-21" rel="nofollow sponsored noopener" target="_blank">View on Amazon →</a>
+</div>
+</div>
+<p class="acc-header">Complete the Knife Setup</p>
+<div class="acc-grid">
+<div class="acc-card">
+<div class="acc-swatch" style="background:linear-gradient(135deg,#888,#444);"></div>
+<h4 class="acc-name">Magnetic Knife Strip — Matte Black</h4>
+<p class="acc-desc">Powder-coated steel. Knives displayed on the wall, edges protected. A feature, not just storage.</p>
+<a class="acc-link" href="https://www.amazon.co.uk/dp/B07GJMYVJ9?tag=sinkedit-21" rel="nofollow sponsored noopener" target="_blank">View on Amazon →</a>
+</div>
+<div class="acc-card">
+<div class="acc-swatch" style="background:linear-gradient(135deg,#C4A882,#8A7055);"></div>
+<h4 class="acc-name">Whetstone Sharpening Set</h4>
+<p class="acc-desc">Dual-grit whetstone with bamboo base. Looks considered on the counter. Keeps edges sharp for years without a sharpener that looks like a mistake.</p>
+<a class="acc-link" href="https://www.amazon.co.uk/dp/B01FZZUL30?tag=sinkedit-21" rel="nofollow sponsored noopener" target="_blank">View on Amazon →</a>
+</div>
+<div class="acc-card">
+<div class="acc-swatch" style="background:linear-gradient(135deg,#E0E0DC,#C0BCB0);"></div>
+<h4 class="acc-name">KooK Ceramic Prep Bowl Set</h4>
+<p class="acc-desc">Small nesting bowls in cream or sage — the mise en place that looks like it belongs in a food shoot rather than a Sunday prep session.</p>
+<a class="acc-link" href="https://www.amazon.co.uk/dp/B0BJS6M86W?tag=sinkedit-21" rel="nofollow sponsored noopener" target="_blank">View on Amazon →</a>
+</div>
+</div>
+</div>
+</section>
+<!-- ══════════════ 04 · BAKEWARE ══════════════ -->
+<section class="cat-section" id="bakeware">
+<div class="inner">
+<p class="section-number">04 / 12</p>
+<h2 class="section-title">Mixing Bowls &amp; Bakeware</h2>
+<p class="section-intro">The Sunday bake deserves a setup that looks as good as the result tastes.</p>
+<div class="hero-grid">
+<div class="hero-visual">
+<div class="hero-visual-bg" style="background:linear-gradient(145deg,#E8DDD0,#C4B09A);">
+<span class="hero-icon">🥣</span>
+</div>
+<div class="hero-stamp">Hero Product</div>
+</div>
+<div class="hero-content">
+<div class="hero-badge">Direct Amazon.co.uk Link</div>
+<h3 class="hero-name">Stoneware Mixing Bowl Set — Nesting</h3>
+<div class="hero-specs">
+<div class="spec">Reactive glaze stoneware · Three nesting sizes</div>
+<div class="spec">Sage, cream, or speckled finish</div>
+<div class="spec">Oven &amp; microwave safe</div>
+<div class="spec">Pouring lip · Non-slip base</div>
+</div>
+<p class="hero-desc">Stoneware mixing bowls in a reactive glaze — each piece comes out slightly different from the kiln, which means hers are genuinely unique. A pouring lip on each bowl. Non-slip base that stays put on the worktop. They stack neatly for storage and sit beautifully on display. The kind of bowls that make the baking process feel like an event.</p>
+<div class="hero-love">"The bowls she leaves out on the counter because they're too beautiful to put away."</div>
+<a class="btn btn-outline" href="https://www.amazon.co.uk/dp/B0CX32WZLC?tag=sinkedit-21" rel="nofollow sponsored noopener" target="_blank">View on Amazon →</a>
+</div>
+</div>
+<p class="acc-header">Complete the Bakeware Setup</p>
+<div class="acc-grid">
+<div class="acc-card">
+<div class="acc-swatch" style="background:linear-gradient(135deg,#C8C0B0,#908878);"></div>
+<h4 class="acc-name">Joseph Joseph Nest Bake 3-Piece Tray Set</h4>
+<p class="acc-desc">Stackable carbon-steel baking trays with easy-pull handles and a 10-year guarantee. Cleaner storage, cleaner handling.</p>
+<a class="acc-link" href="https://www.amazon.co.uk/dp/B0D8BJ1434?tag=sinkedit-21" rel="nofollow sponsored noopener" target="_blank">View on Amazon →</a>
+</div>
+<div class="acc-card">
+<div class="acc-swatch" style="background:linear-gradient(135deg,#E8E0D8,#CCC0B0);"></div>
+<h4 class="acc-name">Marble Effect Pastry Board</h4>
+<p class="acc-desc">Cold surface for pastry. Stays put on the worktop. Doubles as a cheese board and looks like it was chosen for both reasons.</p>
+<a class="acc-link" href="https://www.amazon.co.uk/dp/B074V99TSM?tag=sinkedit-21" rel="nofollow sponsored noopener" target="_blank">View on Amazon →</a>
+</div>
+<div class="acc-card">
+<div class="acc-swatch" style="background:linear-gradient(135deg,#8FAF88,#5A7A5A);"></div>
+<h4 class="acc-name">Premium Silicone Baking Set</h4>
+<p class="acc-desc">Spatula, whisk, and pastry brush in a coordinated sage or cream set. Heat-resistant, flexible, and the kind of tools that stay on the counter.</p>
+<a class="acc-link" href="https://www.amazon.co.uk/dp/B083ZS83VX?tag=sinkedit-21" rel="nofollow sponsored noopener" target="_blank">View on Amazon →</a>
+</div>
+</div>
+</div>
+</section>
+<!-- ══════════════ 05 · STORAGE ══════════════ -->
+<section class="cat-section" id="storage">
+<div class="inner">
+<p class="section-number">05 / 12</p>
+<h2 class="section-title">Kitchen Storage &amp; Canisters</h2>
+<p class="section-intro">The things that sit on the worktop all day. They need to earn it.</p>
+<div class="hero-grid">
+<div class="hero-visual">
+<div class="hero-visual-bg" style="background:linear-gradient(145deg,#8FAF88,#5A7A5A);">
+<span class="hero-icon">🫙</span>
+</div>
+<div class="hero-stamp">Hero Product</div>
+</div>
+<div class="hero-content">
+<div class="hero-badge">Direct Amazon.co.uk Link</div>
+<h3 class="hero-name">LENAK Stackable Canisters — Sage Green</h3>
+<div class="hero-specs">
+<div class="spec">Ceramic · Bamboo lids with silicone seal</div>
+<div class="spec">Tea, Coffee &amp; Sugar — embossed lettering</div>
+<div class="spec">Stackable · Space-saving design</div>
+<div class="spec">Airtight · Keeps contents fresh</div>
+</div>
+<p class="hero-desc">Sage green powder-coated steel with natural wooden lids that create an airtight seal. A stackable silhouette saves worktop space, while the clear viewing window keeps tea, coffee and sugar easy to identify. On a worktop, they look like they were sourced from a high-end kitchen shop. They came from Amazon.</p>
+<div class="hero-love">"The first thing guests notice when they walk into the kitchen."</div>
+<a class="btn btn-dark" href="https://www.amazon.co.uk/dp/B0FPCJ9CNW?tag=sinkedit-21" rel="nofollow sponsored noopener" target="_blank">View on Amazon.co.uk →</a>
+</div>
+</div>
+<p class="acc-header">Complete the Storage Setup</p>
+<div class="acc-grid">
+<div class="acc-card">
+<div class="acc-swatch" style="background:linear-gradient(135deg,#C8DCC0,#8AAA80);"></div>
+<h4 class="acc-name">Salter Toronto Green Bread Bin</h4>
+<p class="acc-desc">Powder-coated green steel with an acacia wooden lid. Holds up to two loaves and matches the canister story.</p>
+<a class="acc-link" href="https://www.amazon.co.uk/dp/B0FDLFLTB7?tag=sinkedit-21" rel="nofollow sponsored noopener" target="_blank">View on Amazon →</a>
+</div>
+<div class="acc-card">
+<div class="acc-swatch" style="background:linear-gradient(135deg,#E8E0D8,#C8C0B0);"></div>
+<h4 class="acc-name">Glass Spice Jar Set with Labels</h4>
+<p class="acc-desc">Uniform glass jars with matte black lids and hand-written or printed labels. The spice rack that makes the cupboard look curated.</p>
+<a class="acc-link" href="https://www.amazon.co.uk/dp/B091312QR8?tag=sinkedit-21" rel="nofollow sponsored noopener" target="_blank">View on Amazon →</a>
+</div>
+<div class="acc-card">
+<div class="acc-swatch" style="background:linear-gradient(135deg,#C4A882,#8C6E4A);"></div>
+<h4 class="acc-name">Bamboo Utensil Holder</h4>
+<p class="acc-desc">Three-section bamboo crock for the counter. Holds spatulas, wooden spoons, and whisks upright. Tidier than a jar, more considered than a pot.</p>
+<a class="acc-link" href="https://www.amazon.co.uk/dp/B00T71CI76?tag=sinkedit-21" rel="nofollow sponsored noopener" target="_blank">View on Amazon →</a>
+</div>
+</div>
+</div>
+</section>
+<!-- ══════════════ 06 · SERVING ══════════════ -->
+<section class="cat-section" id="serving">
+<div class="inner">
+<p class="section-number">06 / 12</p>
+<h2 class="section-title">Serving &amp; Entertaining</h2>
+<p class="section-intro">The pieces that come out when company arrives. The ones that get photographed before the food does.</p>
+<div class="hero-grid">
+<div class="hero-visual">
+<div class="hero-visual-bg" style="background:linear-gradient(145deg,#E0D8D0,#B8B0A8);">
+<span class="hero-icon">🪨</span>
+</div>
+<div class="hero-stamp">Hero Product</div>
+</div>
+<div class="hero-content">
+<div class="hero-badge">Direct Amazon.co.uk Link</div>
+<h3 class="hero-name">Slate Serving Tray with Handles</h3>
+<div class="hero-specs">
+<div class="spec">Natural slate · Cool to the touch</div>
+<div class="spec">Chalk marker included for labelling</div>
+<div class="spec">Non-slip feet · Heat resistant</div>
+<div class="spec">Doubles as a cheese board or platter</div>
+</div>
+<p class="hero-desc">Natural slate, cool to the touch, with the kind of dark elegance that makes everything placed on it look more expensive. Carry handles built in. A chalk marker included so cheeses, cured meats, and accompaniments can be labelled with the care they deserve. Dishwasher safe. The board that makes a grazing table look intentional.</p>
+<div class="hero-love">"She sets the board out before guests arrive and they photograph it before they touch it."</div>
+<a class="btn btn-outline" href="https://www.amazon.co.uk/dp/B074V99TSM?tag=sinkedit-21" rel="nofollow sponsored noopener" target="_blank">View on Amazon →</a>
+</div>
+</div>
+<p class="acc-header">Complete the Entertaining Spread</p>
+<div class="acc-grid">
+<div class="acc-card">
+<div class="acc-swatch" style="background:linear-gradient(135deg,#C4A882,#8C6E4A);"></div>
+<h4 class="acc-name">KooK Ceramic Nesting Serving Bowls</h4>
+<p class="acc-desc">A glazed stoneware bowl set that works for salads, sides and table serving. Neutral enough to pair with wood, slate and linen.</p>
+<a class="acc-link" href="https://www.amazon.co.uk/dp/B0BJS6M86W?tag=sinkedit-21" rel="nofollow sponsored noopener" target="_blank">View on Amazon →</a>
+</div>
+<div class="acc-card">
+<div class="acc-swatch" style="background:linear-gradient(135deg,#8FAF88,#5A7A5A);"></div>
+<h4 class="acc-name">Cotton-Linen Apron / Textile Pick</h4>
+<p class="acc-desc">Soft, practical kitchen textile in a muted colourway. The kind of piece that makes the everyday kitchen feel dressed.</p>
+<a class="acc-link" href="https://www.amazon.co.uk/dp/B09B34N8KZ?tag=sinkedit-21" rel="nofollow sponsored noopener" target="_blank">View on Amazon →</a>
+</div>
+<div class="acc-card">
+<div class="acc-swatch" style="background:linear-gradient(135deg,#E0E8D8,#C0CEB0);"></div>
+<h4 class="acc-name">Glass Carafe</h4>
+<p class="acc-desc">Clear borosilicate glass with a stopper or pour lip. On the table, it signals that the host thinks about the small things. Which she does.</p>
+<a class="acc-link" href="https://www.amazon.co.uk/dp/B0000CF95E?tag=sinkedit-21" rel="nofollow sponsored noopener" target="_blank">View on Amazon →</a>
+</div>
+<div class="acc-card">
+<div class="acc-swatch" style="background:linear-gradient(135deg,#D0C8BC,#A8A09A);"></div>
+<h4 class="acc-name">Cheese Knife Set</h4>
+<p class="acc-desc">Three-piece cheese knife set with marble-effect handles. Rests on the board like it was always part of the composition.</p>
+<a class="acc-link" href="https://www.amazon.co.uk/dp/B07T8HRF9L?tag=sinkedit-21" rel="nofollow sponsored noopener" target="_blank">View on Amazon →</a>
+</div>
+</div>
+</div>
+</section>
+<!-- ══════════════ 07 · BOARDS ══════════════ -->
+<section class="cat-section" id="boards">
+<div class="inner">
+<p class="section-number">07 / 12</p>
+<h2 class="section-title">Chopping Boards</h2>
+<p class="section-intro">On the counter more than anything else. Size, material, and natural grain matter enormously.</p>
+<div class="hero-grid">
+<div class="hero-visual">
+<div class="hero-visual-bg" style="background:linear-gradient(145deg,#C4A882,#8C6E4A);">
+<span class="hero-icon">🪵</span>
+</div>
+<div class="hero-stamp">Hero Product</div>
+</div>
+<div class="hero-content">
+<div class="hero-badge">Direct Amazon.co.uk Link</div>
+<h3 class="hero-name">JF James F Large Round Acacia Chopping Board — 40cm</h3>
+<div class="hero-specs">
+<div class="spec">30-year-old high-density acacia wood</div>
+<div class="spec">40cm diameter · 1.8cm thick</div>
+<div class="spec">Deep juice groove around perimeter</div>
+<div class="spec">Reversible — prep side &amp; serving side</div>
+</div>
+<p class="hero-desc">Selected from 30-year-old high-density acacia — the density that gives a double hardness rating compared to standard boards. The natural grain varies across every single board, meaning hers is unique. 40cm across: large enough for a joint of meat, beautiful enough to serve a cheese arrangement. The juice groove is deep and functional. Reverses to a smooth serving surface.</p>
+<div class="hero-love">"The board left on the counter because it's too beautiful to put away."</div>
+<a class="btn btn-dark" href="https://www.amazon.co.uk/dp/B0B5QYS717?tag=sinkedit-21" rel="nofollow sponsored noopener" target="_blank">View on Amazon.co.uk →</a>
+</div>
+</div>
+<p class="acc-header">Complete the Board Setup</p>
+<div class="acc-grid">
+<div class="acc-card">
+<div class="acc-swatch" style="background:linear-gradient(135deg,#D4BC9A,#A88C6A);"></div>
+<h4 class="acc-name">Matching Acacia Prep Board</h4>
+<p class="acc-desc">A second board at half the size — for quick prep, bread, or fruit. Same grain, same warmth. They pair beautifully propped up together.</p>
+<a class="acc-link" href="https://www.amazon.co.uk/dp/B0B5QYS717?tag=sinkedit-21" rel="nofollow sponsored noopener" target="_blank">View on Amazon →</a>
+</div>
+<div class="acc-card">
+<div class="acc-swatch" style="background:linear-gradient(135deg,#E8E0D8,#C4BCB0);"></div>
+<h4 class="acc-name">Wood Board Conditioning Oil</h4>
+<p class="acc-desc">Beeswax and mineral oil blend. Feeds the wood, extends the grain's beauty, and protects from moisture. The ritual that keeps it looking new for years.</p>
+<a class="acc-link" href="https://www.amazon.co.uk/dp/B001E5DZTS?tag=sinkedit-21" rel="nofollow sponsored noopener" target="_blank">View on Amazon →</a>
+</div>
+<div class="acc-card">
+<div class="acc-swatch" style="background:linear-gradient(135deg,#555,#333);"></div>
+<h4 class="acc-name">Board / Knife Display Stand</h4>
+<p class="acc-desc">Displays the board vertically when not in use. Matte black iron or natural wood. The finishing touch that says this board was chosen, not found.</p>
+<a class="acc-link" href="https://www.amazon.co.uk/dp/B07GJMYVJ9?tag=sinkedit-21" rel="nofollow sponsored noopener" target="_blank">View on Amazon →</a>
+</div>
+</div>
+</div>
+</section>
+<!-- ══════════════ 08 · STAND MIXER ══════════════ -->
+<section class="cat-section" id="mixer">
+<div class="inner">
+<p class="section-number">08 / 12</p>
+<h2 class="section-title">Stand Mixer</h2>
+<p class="section-intro">The most admired object in any kitchen it lives in. There is one clear choice.</p>
+<div class="hero-grid">
+<div class="hero-visual">
+<div class="hero-visual-bg" style="background:linear-gradient(145deg,#E8E0D4,#C4B8A8);">
+<span class="hero-icon">🎂</span>
+</div>
+<div class="hero-stamp">Hero Product</div>
+</div>
+<div class="hero-content">
+<div class="hero-badge">Direct Amazon.co.uk Link</div>
+<h3 class="hero-name">KitchenAid Artisan 4.8L Stand Mixer — Almond Cream</h3>
+<div class="hero-specs">
+<div class="spec">Die-cast zinc and aluminium · Enamel finish</div>
+<div class="spec">4.8L stainless steel bowl</div>
+<div class="spec">10 speeds · Planetary mixing action</div>
+<div class="spec">5-year guarantee · Made in Ohio since 1919</div>
+</div>
+<p class="hero-desc">The KitchenAid Artisan has been on kitchen counters since 1937 and looks better now than it ever did. Almond Cream is the colourway that works in every kitchen — warm, timeless, not trying to match anything. The planetary action means the beater touches 59 points around the bowl. 10 speeds. Handles everything from delicate meringues to heavy bread dough. The bowl holds enough for 9 dozen cookies. A 5-year guarantee. Over 15 optional attachments — pasta, ice cream, meat grinder. This is the piece she was building toward.</p>
+<div class="hero-love">"The thing she didn't know was missing from her kitchen until it was there."</div>
+<a class="btn btn-dark" href="https://www.amazon.co.uk/dp/B07L34Y2PD?tag=sinkedit-21" rel="nofollow sponsored noopener" target="_blank">View on Amazon.co.uk →</a>
+</div>
+</div>
+<p class="acc-header">Complete the Mixer Setup</p>
+<div class="acc-grid">
+<div class="acc-card">
+<div class="acc-swatch" style="background:linear-gradient(135deg,#B8956A,#8A6840);"></div>
+<h4 class="acc-name">KitchenAid Pasta Attachment</h4>
+<p class="acc-desc">Fresh tagliatelle, spaghetti, or lasagne sheets. This is where the mixer stops being an appliance and becomes the reason for a dinner party.</p>
+<a class="acc-link" href="https://www.amazon.co.uk/dp/B00004SGFW?tag=sinkedit-21" rel="nofollow sponsored noopener" target="_blank">View on Amazon →</a>
+</div>
+<div class="acc-card">
+<div class="acc-swatch" style="background:linear-gradient(135deg,#E8E0D4,#C8BEA8);"></div>
+<h4 class="acc-name">Mixing Bowl Cover Set</h4>
+<p class="acc-desc">Silicone covers that fit the KitchenAid bowl — for proving dough or chilling a batter between steps. In cream or sage. A small detail that signals mastery.</p>
+<a class="acc-link" href="https://www.amazon.co.uk/dp/B07Q7QG8D2?tag=sinkedit-21" rel="nofollow sponsored noopener" target="_blank">View on Amazon →</a>
+</div>
+<div class="acc-card">
+<div class="acc-swatch" style="background:linear-gradient(135deg,#C4A882,#8A7055);"></div>
+<h4 class="acc-name">Beautiful Baking Book</h4>
+<p class="acc-desc">A beautiful baking book that earns its place on the worktop beside the mixer. A hardback baking book that looks good beside the mixer and actually gets used.</p>
+<a class="acc-link" href="https://www.amazon.co.uk/dp/1785031149?tag=sinkedit-21" rel="nofollow sponsored noopener" target="_blank">View on Amazon →</a>
+</div>
+<div class="acc-card">
+<div class="acc-swatch" style="background:linear-gradient(135deg,#E0E8D8,#B8C8A8);"></div>
+<h4 class="acc-name">Appliance Sliding Mat</h4>
+<p class="acc-desc">Heat and slip resistant. Lets the mixer move to the front of the worktop for use and slide back easily. No dragging, no scratching. A small thing that makes a daily difference.</p>
+<a class="acc-link" href="https://www.amazon.co.uk/dp/B0CYH3ZQW2?tag=sinkedit-21" rel="nofollow sponsored noopener" target="_blank">View on Amazon →</a>
+</div>
+</div>
+</div>
+</section>
+<!-- ══════════════ 09 · AIR FRYER ══════════════ -->
+<section class="cat-section" id="airfryer">
+<div class="inner">
+<p class="section-number">09 / 12</p>
+<h2 class="section-title">Air Fryer</h2>
+<p class="section-intro">It lives on the counter permanently. The form matters as much as the function. One model owns this category.</p>
+<div class="hero-grid">
+<div class="hero-visual">
+<div class="hero-visual-bg" style="background:linear-gradient(145deg,#2A2A2A,#111);">
+<span class="hero-icon">🍟</span>
+</div>
+<div class="hero-stamp">Hero Product</div>
+</div>
+<div class="hero-content">
+<div class="hero-badge">Direct Amazon.co.uk Link</div>
+<h3 class="hero-name">Ninja Foodi Dual Zone Air Fryer — AF300UK</h3>
+<div class="hero-specs">
+<div class="spec">7.6L total capacity · Two independent drawers</div>
+<div class="spec">Matte black with stainless accents</div>
+<div class="spec">6 cooking functions including Max Crisp &amp; Dehydrate</div>
+<div class="spec">2-year guarantee on registration · Dishwasher-safe parts</div>
+</div>
+<p class="hero-desc">Two independent cooking zones — different temperatures, different times, both finish together. The SYNC function times them to the second. Matte black body with brushed metal handles: the design that earns its place on the counter rather than being hidden in a cupboard. 6 functions: Air Fry, Max Crisp, Roast, Bake, Reheat, Dehydrate. Up to 75% less fat. Dinner in under 20 minutes. 2-year guarantee on registration. The UK's best-selling dual-zone air fryer for good reason.</p>
+<div class="hero-love">"Two different dinners, ready at exactly the same time. She thought of that."</div>
+<a class="btn btn-dark" href="https://www.amazon.co.uk/dp/B08CN3G4N9?tag=sinkedit-21" rel="nofollow sponsored noopener" target="_blank">View on Amazon.co.uk →</a>
+</div>
+</div>
+<p class="acc-header">Complete the Air Fryer Setup</p>
+<div class="acc-grid">
+<div class="acc-card">
+<div class="acc-swatch" style="background:linear-gradient(135deg,#444,#222);"></div>
+<h4 class="acc-name">Reusable Silicone Liner Set</h4>
+<p class="acc-desc">Fits both Ninja drawers. Prevents drips, makes cleaning effortless, and extends the life of the non-stick coating. The accessory that pays for itself immediately.</p>
+<a class="acc-link" href="https://www.amazon.co.uk/dp/B0BZXW6P2Z?tag=sinkedit-21" rel="nofollow sponsored noopener" target="_blank">View on Amazon →</a>
+</div>
+<div class="acc-card">
+<div class="acc-swatch" style="background:linear-gradient(135deg,#C4A882,#8A7055);"></div>
+<h4 class="acc-name">Ninja Air Fryer Cookbook</h4>
+<p class="acc-desc">A recipe book specifically for the Dual Zone — photographed beautifully, organised by cooking function. Makes the appliance feel like an investment rather than an impulse.</p>
+<a class="acc-link" href="https://www.amazon.co.uk/dp/1915333395?tag=sinkedit-21" rel="nofollow sponsored noopener" target="_blank">View on Amazon →</a>
+</div>
+<div class="acc-card">
+<div class="acc-swatch" style="background:linear-gradient(135deg,#8FAF88,#5A7A5A);"></div>
+<h4 class="acc-name">Heat-Resistant Appliance Mat</h4>
+<p class="acc-desc">Protects the worktop and gives the air fryer its designated spot. Available in sage, cream, or charcoal. The finishing touch that makes the counter look considered.</p>
+<a class="acc-link" href="https://www.amazon.co.uk/dp/B0CYH3ZQW2?tag=sinkedit-21" rel="nofollow sponsored noopener" target="_blank">View on Amazon →</a>
+</div>
+</div>
+</div>
+</section>
+<!-- ══════════════ 10 · TEXTILES ══════════════ -->
+<section class="cat-section" id="textiles">
+<div class="inner">
+<p class="section-number">10 / 12</p>
+<h2 class="section-title">Kitchen Textiles</h2>
+<p class="section-intro">What hangs from the oven door. What's folded beside the sink. The softest details in the room.</p>
+<div class="hero-grid">
+<div class="hero-visual">
+<div class="hero-visual-bg" style="background:linear-gradient(145deg,#6E9470,#3A5C3C);">
+<span class="hero-icon">👘</span>
+</div>
+<div class="hero-stamp">Hero Product</div>
+</div>
+<div class="hero-content">
+<div class="hero-badge">Direct Amazon.co.uk Link</div>
+<h3 class="hero-name">Cotton-Linen Cross-Back Apron — Sage</h3>
+<div class="hero-specs">
+<div class="spec">100% stonewashed linen · Adjustable cross-back straps</div>
+<div class="spec">Large front pocket · Tie waist</div>
+<div class="spec">Pre-washed for softness from day one</div>
+<div class="spec">Sage, stone, slate, or charcoal</div>
+</div>
+<p class="hero-desc">Stonewashed linen that gets softer with every wash. The cross-back fit distributes weight evenly and doesn't tie behind the neck. A large front pocket with sections for a phone or a recipe card. The kind of apron worn on Sunday mornings that looks like it was styled for a shoot. She'll reach for it every time. It'll photograph beautifully every time.</p>
+<div class="hero-love">"The apron that makes cooking feel like a lifestyle — because it is."</div>
+<a class="btn btn-outline" href="https://www.amazon.co.uk/dp/B09B34N8KZ?tag=sinkedit-21" rel="nofollow sponsored noopener" target="_blank">View on Amazon →</a>
+</div>
+</div>
+<p class="acc-header">Complete the Kitchen Textiles</p>
+<div class="acc-grid">
+<div class="acc-card">
+<div class="acc-swatch" style="background:linear-gradient(135deg,#8FAF88,#5A7A5A);"></div>
+<h4 class="acc-name">Waffle Weave Tea Towels — Set of 3</h4>
+<p class="acc-desc">100% cotton waffle weave. Exceptionally absorbent. The kind folded over the oven rail rather than stuffed in a drawer. Sage, stone, and cream — all three.</p>
+<a class="acc-link" href="https://www.amazon.co.uk/dp/B08YRYNW1T?tag=sinkedit-21" rel="nofollow sponsored noopener" target="_blank">View on Amazon →</a>
+</div>
+<div class="acc-card">
+<div class="acc-swatch" style="background:linear-gradient(135deg,#3A3A3A,#1A1A1A);"></div>
+<h4 class="acc-name">Double Oven Gloves — Linen</h4>
+<p class="acc-desc">A long double oven glove in linen with cotton wadding. Heat-resistant to 230°C. Hangs over the oven handle and looks intentional about it.</p>
+<a class="acc-link" href="https://www.amazon.co.uk/dp/B00Q8ITFZE?tag=sinkedit-21" rel="nofollow sponsored noopener" target="_blank">View on Amazon →</a>
+</div>
+<div class="acc-card">
+<div class="acc-swatch" style="background:linear-gradient(135deg,#E8E0D8,#C8C0B0);"></div>
+<h4 class="acc-name">Linen Bread Bag</h4>
+<p class="acc-desc">Drawstring linen bag that keeps a sourdough loaf fresh for days. Sits in the bread bin or on the counter like a detail from a French kitchen.</p>
+<a class="acc-link" href="https://www.amazon.co.uk/dp/B08XXQJ9KM?tag=sinkedit-21" rel="nofollow sponsored noopener" target="_blank">View on Amazon →</a>
+</div>
+</div>
+</div>
+</section>
+<!-- ══════════════ 11 · SINK EDIT ══════════════ -->
+<section class="cat-section" id="sink">
+<div class="inner">
+<p class="section-number">11 / 12</p>
+<h2 class="section-title">Sink &amp; Surface Edit</h2>
+<p class="section-intro">The sink area. Visible from most of the room. It should be coordinated, not functional-looking.</p>
+<div class="hero-grid">
+<div class="hero-visual">
+<div class="hero-visual-bg" style="background:linear-gradient(145deg,#2A2A2A,#444);">
+<span class="hero-icon">🫧</span>
+</div>
+<div class="hero-stamp">Hero Product</div>
+</div>
+<div class="hero-content">
+<div class="hero-badge">Direct Amazon.co.uk Link</div>
+<h3 class="hero-name">Matte Black Sink Dispenser Set</h3>
+<div class="hero-specs">
+<div class="spec">Powder-coated matte black stainless</div>
+<div class="spec">Refillable pump dispenser · 400ml capacity</div>
+<div class="spec">Matching dish brush with black handle</div>
+<div class="spec">Available as a coordinated 3-piece set</div>
+</div>
+<p class="hero-desc">Powder-coated matte black that coordinates with taps, handles, and fixtures. A refillable pump dispenser — fill it with a premium concentrated washing-up liquid so the label is never visible. A matching dish brush with natural bristles and a black handle. The small decisions that make the sink area look designed rather than assembled. Visitors notice. They don't know why. This is why.</p>
+<div class="hero-love">"The sink area that gets compliments because people assume it was styled."</div>
+<a class="btn btn-outline" href="https://www.amazon.co.uk/dp/B09Y8XQ7Z5?tag=sinkedit-21" rel="nofollow sponsored noopener" target="_blank">View on Amazon →</a>
+</div>
+</div>
+<p class="acc-header">Complete the Sink Area</p>
+<div class="acc-grid">
+<div class="acc-card">
+<div class="acc-swatch" style="background:linear-gradient(135deg,#3A3A3A,#222);"></div>
+<h4 class="acc-name">Matte Black Dish Drainer</h4>
+<p class="acc-desc">Steel draining rack with a coordinated drip tray. Not stainless chrome — matte black. One fewer visual decision the eye has to make when it lands on the sink.</p>
+<a class="acc-link" href="https://www.amazon.co.uk/dp/B08Z8KCGHD?tag=sinkedit-21" rel="nofollow sponsored noopener" target="_blank">View on Amazon →</a>
+</div>
+<div class="acc-card">
+<div class="acc-swatch" style="background:linear-gradient(135deg,#8FAF88,#5A7A5A);"></div>
+<h4 class="acc-name">Herb Pot — Windowsill</h4>
+<p class="acc-desc">A small planted herb in a coordinated ceramic pot for the windowsill above the sink. Basil, rosemary, mint. The living detail that makes the whole area feel like a choice.</p>
+<a class="acc-link" href="https://www.amazon.co.uk/dp/B0B9S8K7PR?tag=sinkedit-21" rel="nofollow sponsored noopener" target="_blank">View on Amazon →</a>
+</div>
+<div class="acc-card">
+<div class="acc-swatch" style="background:linear-gradient(135deg,#E8E0D8,#C8BEB0);"></div>
+<h4 class="acc-name">Premium Washing-Up Liquid</h4>
+<p class="acc-desc">Fill the dispenser with Ecover, Method, or Surcare — concentrated formulas in pump-friendly consistency. The bottle never sits on the counter. Only the dispenser does.</p>
+<a class="acc-link" href="https://www.amazon.co.uk/dp/B00DRE3LZO?tag=sinkedit-21" rel="nofollow sponsored noopener" target="_blank">View on Amazon →</a>
+</div>
+</div>
+</div>
+</section>
+<!-- ══════════════ 12 · UNDER-SINK ══════════════ -->
+<section class="cat-section" id="undersink">
+<div class="inner">
+<p class="section-number">12 / 12</p>
+<h2 class="section-title">Under-Sink Organisation</h2>
+<div class="undersink-callout">
+<p>No guest will ever open that door. But she will — every single day. And every time she does, it should feel like proof that her standards apply everywhere, not just where people can see.</p>
+</div>
+<div class="hero-grid">
+<div class="hero-visual">
+<div class="hero-visual-bg" style="background:linear-gradient(145deg,#D8D0C8,#B0A898);">
+<span class="hero-icon">🪣</span>
+</div>
+<div class="hero-stamp">Hero Product</div>
+</div>
+<div class="hero-content">
+<div class="hero-badge">Direct Amazon.co.uk Link</div>
+<h3 class="hero-name">Pull-Out Under-Sink Organiser — White</h3>
+<div class="hero-specs">
+<div class="spec">Adjustable height · Expandable to fit around pipework</div>
+<div class="spec">Two sliding drawer tiers on smooth rails</div>
+<div class="spec">Anti-slip suction cup base</div>
+<div class="spec">Removable anti-fouling pads · No tools required</div>
+</div>
+<p class="hero-desc">A two-tier sliding organiser with smooth-glide rails that bring every cleaning product to the front of the cupboard with one pull. Height-adjustable to navigate the pipework. Removable mats that lift out and rinse clean. No drilling, no tools — sits on anti-slip suction cups. White or chrome finish. The transformation that takes under ten minutes and changes every morning after that.</p>
+<div class="hero-love">"She opens it, everything is in its place, and the day starts right."</div>
+<a class="btn btn-outline" href="https://www.amazon.co.uk/dp/B0CTC6QJ36?tag=sinkedit-21" rel="nofollow sponsored noopener" target="_blank">View on Amazon →</a>
+</div>
+</div>
+<p class="acc-header">Complete the Under-Sink Ecosystem</p>
+<div class="acc-grid">
+<div class="acc-card">
+<div class="acc-swatch" style="background:linear-gradient(135deg,#C8DCC0,#8AAA80);"></div>
+<h4 class="acc-name">Refillable Cleaning Bottle Set</h4>
+<p class="acc-desc">Matching frosted bottles with printed labels — surface cleaner, bathroom spray, glass cleaner. Same font, same colour. The cleaning cupboard that looks like it was curated. Because it was.</p>
+<a class="acc-link" href="https://www.amazon.co.uk/dp/B09SHBVQ8L?tag=sinkedit-21" rel="nofollow sponsored noopener" target="_blank">View on Amazon →</a>
+</div>
+<div class="acc-card">
+<div class="acc-swatch" style="background:linear-gradient(135deg,#888,#555);"></div>
+<h4 class="acc-name">Cleaning Caddy or Carry Tote</h4>
+<p class="acc-desc">A handled caddy that lifts the whole cleaning set from under the sink and carries it to any room. Matte black, white, or sage. Looks intentional. Is intentional.</p>
+<a class="acc-link" href="https://www.amazon.co.uk/dp/B0095IL88Q?tag=sinkedit-21" rel="nofollow sponsored noopener" target="_blank">View on Amazon →</a>
+</div>
+<div class="acc-card">
+<div class="acc-swatch" style="background:linear-gradient(135deg,#E8E0D8,#C8BEB0);"></div>
+<h4 class="acc-name">Natural Brush &amp; Cloth Set</h4>
+<p class="acc-desc">Wooden-handled brushes with natural bristles. Cotton cloths in a coordinated neutral. The cleaning tools that look chosen — because they were.</p>
+<a class="acc-link" href="https://www.amazon.co.uk/dp/B009FUF6DM?tag=sinkedit-21" rel="nofollow sponsored noopener" target="_blank">View on Amazon →</a>
+</div>
+<div class="acc-card">
+<div class="acc-swatch" style="background:linear-gradient(135deg,#C4DCC8,#8AB09A);"></div>
+<h4 class="acc-name">English Lavender Sachets</h4>
+<p class="acc-desc">Premium dried English lavender in delicate organza sachets. Tucks into the back of the cupboard or a cleaning caddy so the space opens with a clean, quiet botanical note.</p>
+<a class="acc-link" href="https://www.amazon.co.uk/dp/B008MAOZNS?tag=sinkedit-21" rel="nofollow sponsored noopener" target="_blank">View on Amazon →</a>
+</div>
+</div>
+</div>
+</section>
+<!-- ══════════════ FOOTER ══════════════ -->
+<footer>
+<p class="footer-name">The Curated Kitchen</p>
+<p><strong>Every product link on this page opens to a direct Amazon.co.uk product page.</strong></p>
+<p>All links use the Amazon Associates tracking ID <strong>sinkedit-21</strong>.</p>
+<div class="disclaimer">
+    Prices and availability on Amazon can change quickly. This version removes broad search links and keeps the editorial layout while using direct product links only. Always check the live Amazon page before posting or promoting a specific price.
+  </div>
+</footer>
+</body>
+</html>
